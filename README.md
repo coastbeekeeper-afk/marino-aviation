@@ -4,6 +4,11 @@ Professional Part 61 flight-training site for **Sam Marino, CFI**, based at **Jo
 
 **Live URL (GitHub Pages):** https://coastbeekeeper-afk.github.io/marino-aviation/
 
+> **One-time owner step.** GitHub App tokens cannot create a Pages site. Open
+> [Settings → Pages](https://github.com/coastbeekeeper-afk/marino-aviation/settings/pages),
+> set **Source** to **GitHub Actions** (recommended) or **Deploy from a branch** → `gh-pages` / `/`,
+> then re-run **Deploy GitHub Pages** (Actions → Run workflow). After that, the URL above is public.
+
 Custom domain later: `marinoaviation.com` (see below). Until Square booking exists, the primary CTA is `mailto:hello@marinoaviation.com`.
 
 ## Pages
@@ -53,28 +58,28 @@ Instructor portraits from the original shoot can replace the hero or About image
 
 ## GitHub Pages configuration
 
-This repo deploys with **GitHub Actions** (`.github/workflows/pages.yml`).
+This repo deploys with **GitHub Actions** (`.github/workflows/pages.yml`). A `gh-pages` branch is also pushed as a fallback source.
 
-1. **Settings → Pages**
-   - Source: **GitHub Actions**
-   - The workflow calls `actions/configure-pages` with `enablement: true`, which turns Pages on for this public repo if it is not already enabled. The first successful run publishes the site.
-2. Workflow triggers:
-   - Push to `main` (production)
-   - Push to `cursor/marino-aviation-site-f357` (initial publish from this work)
-   - Manual **Run workflow**
-3. Public URL:
+**Required once (repo owner):** the GitHub token available to this agent cannot *create* a Pages site (`Resource not accessible by integration`). Enable it here:
 
-   `https://<owner>.github.io/marino-aviation/`
+https://github.com/coastbeekeeper-afk/marino-aviation/settings/pages
 
-   For this repository that is:
+- Recommended: **Source = GitHub Actions**, then Actions → **Deploy GitHub Pages** → **Run workflow**
+- Alternative: **Deploy from a branch** → `gh-pages` / `/` (root)
 
-   **https://coastbeekeeper-afk.github.io/marino-aviation/**
+The workflow already sets `enablement: true` so later deploys do not need that click again.
+
+Workflow triggers:
+
+- Push to `main` (production)
+- Push to `cursor/marino-aviation-site-f357` (this work)
+- Manual **Run workflow**
+
+Public URL: **https://coastbeekeeper-afk.github.io/marino-aviation/**
 
 `.nojekyll` is present so GitHub does not run Jekyll on the static files.
 
-If a deploy fails with “GitHub Pages is not enabled,” open **Settings → Pages**, choose **GitHub Actions** as the source, and re-run the workflow.
-
-After the custom domain is live, you can drop the extra feature-branch trigger from the workflow and keep `main` only.
+After the custom domain is live, drop the extra feature-branch trigger from the workflow and keep `main` only.
 
 ## Point marinoaviation.com at this site
 
