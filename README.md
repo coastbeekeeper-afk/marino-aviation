@@ -47,12 +47,13 @@ There is no build step. GitHub Pages serves these files as-is.
 
 Place web-ready JPEGs in `images/`:
 
-- `wing-island.jpg` — home hero (Cessna 182 wing / island aerial)
-- `ramp-golden-hour.jpg` — aircraft on the ramp
-- `above-clouds.jpg` — on top of a cloud layer
-- `runway-lineup.jpg` — cockpit / runway
-- `og-image.jpg` — 1200×630 social share image
+- `hero-182-tarmac.jpg` — home hero (Cessna 182, navy/white, golden hour)
+- `wing-coast.jpg` — coastal aerial from the 182
+- `cockpit-clouds.jpg` — cockpit on top of a cloud layer
+- `og-image.jpg` — 1200×630 social share image (from the 182)
 - `favicon.svg` — browser icon
+
+Older supporting frames (`wing-island.jpg`, `ramp-golden-hour.jpg`, `above-clouds.jpg`, `runway-lineup.jpg`) remain in the folder if you want them later.
 
 Instructor portraits from the original shoot can replace the hero or About image: drop the file into `images/` and change the corresponding `<img src>` (and alt text).
 
