@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://coastbeekeeper-afk.github.io/marino-aviation/sitemap.xml
