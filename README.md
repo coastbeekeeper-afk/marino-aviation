@@ -57,7 +57,7 @@ This repo deploys with **GitHub Actions** (`.github/workflows/pages.yml`).
 
 1. **Settings → Pages**
    - Source: **GitHub Actions**
-   - The first successful run of `Deploy GitHub Pages` publishes the site.
+   - The workflow calls `actions/configure-pages` with `enablement: true`, which turns Pages on for this public repo if it is not already enabled. The first successful run publishes the site.
 2. Workflow triggers:
    - Push to `main` (production)
    - Push to `cursor/marino-aviation-site-f357` (initial publish from this work)
